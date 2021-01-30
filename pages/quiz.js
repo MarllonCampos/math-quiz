@@ -1,47 +1,37 @@
-/* eslint-disable no-console */
-import React from 'react';
-import styled from 'styled-components';
+/* eslint-disable react/jsx-one-expression-per-line */
+import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
-
+import { QuizContainer } from './index';
 import Widget from '../src/components/Widget';
 import QuizLogo from '../src/components/QuizLogo';
 import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
-import InputForm from '../src/components/InputForm';
-
 import db from '../db.json';
 
-export const QuizContainer = styled.section`
-  width:100%;
-  max-width:400px;
-  padding-top:45px;
-  margin: auto 10%;
-  @media (max-width:500px) {
-    margin:0;
-    padding:15px; 
-  }
-  
+const Page = () => {
+  const router = useRouter();
+  const [name, setName] = useState('');
 
+  useEffect(() => {
+    setName(router.query.name);
+  }, []);
 
-`;
-
-export default function Home() {
   return (
+
     <QuizBackground backgroundImage={db.bg}>
       <Head>
-        <title>Se apresente!</title>
+        <title>Primeira Pergunta!</title>
       </Head>
       <QuizContainer>
         <QuizLogo />
         <Widget>
           <Widget.Header>
-            <h1>O quiz da matemágica</h1>
+            <h1>Sabe essa {name}, vamos ver!</h1>
 
           </Widget.Header>
-          <Widget.Content>
-            <InputForm />
-          </Widget.Content>
+          <Widget.Content />
 
         </Widget>
 
@@ -60,5 +50,7 @@ export default function Home() {
       <GitHubCorner projectUrl="https://github.com/marlloncampos/math-quiz" />
 
     </QuizBackground>
+
   );
-}
+};
+export default Page;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 const Widget = styled.div`
   margin:24px 0;
   border: 1px solid ${({ theme }) => theme.colors.secondary};
@@ -20,7 +21,7 @@ const Widget = styled.div`
 `;
 
 Widget.Content = styled.div`
-  padding: 24px 30px ;
+  padding: 24px ;
   & > *:first-child {
     margin-top: 0;
   }
@@ -36,7 +37,6 @@ Widget.Content = styled.div`
   
 `;
 
-
 Widget.Header = styled.header`
   display:flex;
   justify-content:flex-start;
@@ -45,5 +45,5 @@ Widget.Header = styled.header`
   background-color:${({ theme }) => theme.colors.primary};
 
   *{margin:0;}
-`
-export default Widget
+`;
+export default Widget;
