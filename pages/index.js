@@ -1,14 +1,19 @@
+/* eslint-disable no-restricted-globals */
 /* eslint-disable no-console */
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 import Widget from '../src/components/Widget';
 import QuizLogo from '../src/components/QuizLogo';
 import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
-import InputForm from '../src/components/InputForm';
+
+import Input from '../src/components/Input';
+import Button from '../src/components/Button';
+import Form from '../src/components/Form';
 
 import db from '../db.json';
 
@@ -27,6 +32,14 @@ export const QuizContainer = styled.section`
 `;
 
 export default function Home() {
+  const router = useRouter();
+  const [name, setName] = useState('');
+
+  const handleHistoryPush = (event) => {
+    event.preventDefault();
+    router.push(`/quiz?name=${name}`);
+  };
+
   return (
     <QuizBackground backgroundImage={db.bg}>
       <Head>
@@ -40,7 +53,14 @@ export default function Home() {
 
           </Widget.Header>
           <Widget.Content>
-            <InputForm />
+            <Form onSubmit={handleHistoryPush}>
+              <Input value={name} onChange={(event) => setName(event.target.value)} placeholder="Vamos jogar" />
+              <Button type="submit" disabled={name.length === 0}>
+                Jogar
+                {' '}
+                {name}
+              </Button>
+            </Form>
           </Widget.Content>
 
         </Widget>

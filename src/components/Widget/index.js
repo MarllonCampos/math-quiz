@@ -46,4 +46,20 @@ Widget.Header = styled.header`
 
   *{margin:0;}
 `;
+
+Widget.Topic = styled.a`
+  outline:0;
+  text-decoration:none;
+  color: ${({ theme }) => theme.colors.contrasText};
+  background-color: ${({ theme }) => `${theme.colors.primary}40`};
+  padding:10px 20px;
+  margin-bottom:8px;
+  border-radius:${({ theme }) => theme.borderRadius}
+  transition: 300;
+  display:block;
+
+  &:hover, &:focus {
+    opacity:0.5;
+  }
+`;
 export default Widget;

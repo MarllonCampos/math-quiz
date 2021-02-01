@@ -4,25 +4,48 @@
     "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
     "questions": [
       {
-        "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-        "title": "Como fazer um seletor por id via CSS?",
-        "description": "Essa é pra aquecer",
+        "image": "/img/PrimeiraPergunta.png",
+        "title": "A ordem dos fatores",
+        "description": "Antigo ditado em!",
+        "answer": 3,
+        "alternatives": [
+          "Não alteram o viaduto",
+          "Não corrigem o elemento",
+          "Não demonstram atitude",
+          "Não alteram o resultado"
+        ]
+      },
+      {
+        "image": "/img/SegundaPergunta.png",
+        "title": "Qual o valor de um número elevado a 0 (ex: 23^0)",
+        "description": "Essa é fácil",
         "answer": 2,
         "alternatives": [
-          ".elemento",
-          "*elemento",
-          "#elemento",
-          "%elemento"
+           "É igual a ele mesmo",
+           "É igual a 1 sobre o numero (ex: 1/23)",
+           "É igual a 1"
+
+        ]
+      },{
+        "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+        "title": "Quando um numero é multiplicado por 0,5 o que acontece com ele?",
+        "description": "Vamos complicar",
+        "answer": 1,
+        "alternatives": [
+           "Aumenta",
+           "Diminui",
+           "Continua igual"
         ]
       },
       {
         "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-        "title": "Como fazer um background gradiente com css?",
-        "description": "Faz tempo em haha",
-        "answer": 0,
+        "title": "Por que usam a expressão: '0 a esquerda'?",
+        "description": "Fácil",
+        "answer": 1,
         "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
+           "Por que é um grande valor",
+           "Por que não tem valor",
+           "Por que zero a direita não vale nada"
         ]
       }
     ],
